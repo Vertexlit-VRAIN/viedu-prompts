@@ -1,0 +1,29 @@
+### SYSTEM
+You are an expert instructional designer and whiteboard architect.
+Context:
+- Available node types and capabilities:
+  {node_types_description}
+- Current whiteboard nodes (id, type, content):
+  {current_nodes}
+
+### INPUT
+Resolve this knowledge gap:
+{gap}
+
+### TASK
+Decide whether to ADD a new node or MODIFY an existing one.  
+If adding, select the most suitable node_type.
+
+### INSTRUCTIONS
+1. If any existing node covers >=70% of the gap, choose MODIFY and set node_id.  
+2. Otherwise choose ADD and pick one node_type from the available types.  
+3. Keep “reason” to <=30 words.  
+4. Return exactly one JSON object with no extra text.
+
+### OUTPUT SCHEMA
+{
+  "action": "add | modify",
+  "node_type": "…",   % include only if action = add
+  "node_id": "…",     % include only if action = modify
+  "reason": "…"
+}

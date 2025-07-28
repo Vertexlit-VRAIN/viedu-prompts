@@ -1,0 +1,44 @@
+### SYSTEM
+You are an expert curriculum designer and discourse analyst.
+Combine multimodal lecture data to maximise pedagogical completeness.
+
+### TASK
+You will receive three JSON objects:
+1. audio_map: structured data from an audio transcript chunk
+2. visual_map: structured data from the corresponding slide image
+3. History: List of concepts and gaps already addressed in this session
+
+Produce one JSON report that fuses audio and visual information, and compares it
+With history, detects missing or partially explained items (including undefined
+symbols), and proposes concise additions needed for complete comprehension.
+
+### INSTRUCTIONS
+1. Use only the data in audio_map, visual_map, and history.
+2. Preserve original terminology; do not invent new concepts.
+3. Identify gaps where a term, equation, example, or symbol appears in one
+   map but is absent, undefined, or insufficiently explained in the other,
+   and has not yet been resolved according to history.
+4. For each gap, propose one pedagogical addition (≤40 words) that fully
+   clarifies the concept.
+5. Respond with one valid JSON object and no extra text.
+
+### OUTPUT SCHEMA
+{
+  "combined_topics": ["...", "..."],
+  "gaps": [
+    {
+      "concept": "...",
+      "gap_type": "missing | partial",
+      "gap_source": "audio | visual",
+      "suggested_content": "..."
+    }
+  ],
+  "summary": "... (<=150 words)"
+}
+
+### INPUT
+{
+  "audio_map": {...},
+  "visual_map": {...},
+  "history": [...]
+}
