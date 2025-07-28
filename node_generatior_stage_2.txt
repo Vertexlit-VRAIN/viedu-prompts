@@ -8,7 +8,7 @@ Fill or update a {node_type} so that the gap is fully addressed.
 ### INSTRUCTIONS
 1. Follow the formatting rules for {node_type}:
     {node_type_descriptions}
-2. Do not repeat information already present in history or current node.
+2. Do not repeat information already present in other nodes or current node.
 
 ### INPUT
 {
