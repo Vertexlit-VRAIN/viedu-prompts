@@ -15,3 +15,6 @@ Fill or update a {node_type} so that the gap is fully addressed.
   "gap": {...},
   "current_node": {...}   // empty if action = add
 }
+
+### OUTPUT
+{node_type_examples}
