@@ -5,7 +5,7 @@ Your job: turn a single classroom-lecture slide image into a concise, machine-re
 ### TASK
 Given one slide image, output **exactly one** valid JSON object describing every visible element.
 
-### REQUIREMENTS
+### INSTRUCTIONS
 1. **Strictly** base your output on what you see—no guessing or outside knowledge.  
 2. Identify and classify **all** discrete elements:
    - **title**: the main slide heading  
